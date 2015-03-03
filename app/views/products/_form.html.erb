@@ -1,0 +1,27 @@
+<%= form_for @product do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+  
+  <p>
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </p>
+
+	<p>
+		<%= f.label :published %>
+  		<%= check_box(:product, :published, options = {}, checked_value = true, unchecked_value = false) %>
+  	</p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to "Products' list", root_path %>
